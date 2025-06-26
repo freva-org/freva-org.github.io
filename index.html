@@ -54,7 +54,7 @@
     }
     .slide {
       min-height: 100vh;
-      padding: 4rem 1rem 2rem;
+      padding: 0rem 1rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -76,6 +76,19 @@
       max-width: 600px;
       margin-bottom: 1.5rem;
     }
+    .stacked-images {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      max-height: 65vh;
+      overflow: hidden;
+    }
+
+   .stacked-images img {
+      object-fit: contain;
+      width: 100%;
+    }
+
     .slide img {
       width: 100%;
       max-width: 800px;
@@ -83,6 +96,14 @@
       object-fit: contain;
       border-radius: 8px;
       margin-bottom: 1rem;
+    }
+
+    .stacked-images img:first-child {
+      flex: 0.8;
+    }
+
+    .stacked-images img:last-child {
+      flex: 1;
     }
     .link-cards {
       display: flex;
@@ -171,7 +192,10 @@
       <h2>⚡ Search Vast Amounts of Data - Fast and Intuitive</h2>
       <p>🔍 Quickly explore millions of datasets using Freva’s intuitive web
       interface, powerful command line tools, or flexible Python library.</p>
-      <img src="gifs/search-datasets.gif" alt="Dataset Search" />
+      <div class="stacked-images">
+         <img src="gifs/search-datasets-1.gif" alt="Step 1 - Search Input" style="flex: 0.2; object-fit: contain; height: 80%;">
+         <img src="gifs/search-datasets-2.gif" alt="Step 2 - Filter Options"style="flex: 1; object-fit: contain; height: 80%;">
+      </div>
       <div class="nav-buttons">
         <a href="#slide1">More</a>
       </div>
