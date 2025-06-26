@@ -247,42 +247,6 @@
   <footer>
     <p>&copy; 2025 Freva Project. All rights reserved.</p>
   </footer>
-    <script>
-  document.querySelectorAll('.nav-buttons a').forEach(button => {
-    button.addEventListener('click', () => {
-      const currentSection = button.closest('.slide');
-      if (!currentSection) return;
-      const nextSection = currentSection.nextElementSibling;
-      if (!nextSection) return;
-      const gifs = nextSection.querySelectorAll('img');
-      gifs.forEach(img => {
-        if (img.src.includes('.gif')) {
-          const src = img.src;
-          img.src = '';
-          img.src = src;
-        }
-      });
-    });
-  });
-  // Also handle reload on scroll via keyboard
-  document.addEventListener('keydown', (e) => {
-    if (e.key === ' ' || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      const sections = Array.from(document.querySelectorAll('.slide'));
-      const scrollY = window.scrollY + window.innerHeight / 2;
-      const current = sections.findIndex(sec => sec.offsetTop > scrollY);
-      const target = (e.key === 'ArrowUp') ? Math.max(0, current - 2) : Math.min(sections.length - 1, current);
-      const nextSection = sections[target];
-      const gifs = nextSection.querySelectorAll('img');
-      gifs.forEach(img => {
-        if (img.src.includes('.gif')) {
-          const src = img.src;
-          img.src = '';
-          img.src = src;
-        }
-      });
-    }
-  });
-</script>
 
   <script>
     const sections = Array.from(document.querySelectorAll('.slide'));
