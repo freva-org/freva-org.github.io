@@ -24,6 +24,8 @@
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     html, body {
       margin: 0;
@@ -158,6 +160,43 @@
         align-items: center;
       }
     }
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-button {
+      background: none;
+      border: none;
+      color: #90caf9;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.6rem 1.2rem;
+      min-width: 150px;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2a2a2a;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      display: none;
+      flex-direction: column;
+      z-index: 200;
+      min-width: 150px;
+    }
+
+    .dropdown-content a {
+      padding: 0.5rem 1rem;
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -169,15 +208,20 @@
 </head>
 <body>
   <header>
-    <a href="#intro"><img src="logo.png" alt="Freva Logo" class="logo" /></a>
-    <nav>
-      <a href="#slide0">DataSearch</a>
-      <a href="#slide1">Workflows</a>
-      <a href="#slide2">Streaming</a>
-      <a href="#slide3">ChatBot</a>
-      <a href="#slide4">Interested?</a>
-    </nav>
-  </header>
+  <a href="#intro"><img src="logo.png" alt="Freva Logo" class="logo" /></a>
+  <nav style="display: flex; align-items: center; gap: 1rem;">
+    <div class="dropdown" >
+      <button style="background: none; border: none; color: #90caf9; font-size: 1rem; cursor: pointer;">Documentation ▾</button>
+      <div class="dropdown-content">
+        <a href="https://freva-org.github.io/freva-admin" style="padding: 0.5rem 1rem;">For admins</a>
+        <a href="https://freva-org.github.io/freva-nextgen" style="padding: 0.5rem 1rem;">For users</a>
+      </div>
+    </div>
+    <a href="https://github.com/freva-org" target="_blank" style="font-size: 1.5rem; color: #90caf9;">
+        <i class="fab fa-github"></i>
+    </a>
+  </nav>
+</header>
 
   <main>
       <section class="slide" id="intro">
@@ -257,7 +301,14 @@
   <footer>
     <p>&copy; 2025 Freva Project. All rights reserved.</p>
   </footer>
-
+  <script>
+      document.querySelector('.dropdown button').addEventListener('mouseover', () => {
+        document.querySelector('.dropdown-content').style.display = 'flex';
+      });
+      document.querySelector('.dropdown').addEventListener('mouseleave', () => {
+        document.querySelector('.dropdown-content').style.display = 'none';
+      });
+  </script>
   <script>
     const sections = Array.from(document.querySelectorAll('.slide'));
 
