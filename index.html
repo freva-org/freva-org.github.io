@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freva</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'DM Sans', 'Segoe UI', "Inter", Roboto, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      background-color: rgba(31, 31, 31, 0.65);
+    }
+    .logo {
+      height: 40px;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #e9eef2;
+    }
+    .slide {
+      min-height: 100vh;
+      padding: 4rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      scroll-margin-top: 80px;
+      box-sizing: border-box;
+      position: relative;
+      background-color: #1c1c1e;
+      background-image: radial-gradient(circle at top left, rgba(72, 149, 239, 0.2), transparent 60%),
+                        radial-gradient(circle at bottom right, rgba(58, 217, 190, 0.15), transparent 60%);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+    .slide img {
+      width: 100%;
+      max-width: 800px;
+      max-height: 60vh;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .link-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .link-card {
+      background-color: #1f1f1f;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #90caf9;
+      box-shadow: 0 0 0 1px #333;
+      transition: background 0.3s;
+    }
+    .link-card:hover {
+      background-color: #2a2a2a;
+    }
+    .nav-buttons {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .nav-buttons a {
+      padding: 0.75rem 1.25rem;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff6ec4, #7873f5);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .nav-buttons a:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #33d6ff, #338aff);
+
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      background-color: #1f1f1f;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#intro"><img src="logo.png" alt="Freva Logo" class="logo" /></a>
+    <nav>
+      <a href="#slide0">DataSearch</a>
+      <a href="#slide1">Workflows</a>
+      <a href="#slide2">Streaming</a>
+      <a href="#slide3">ChatBot</a>
+      <a href="#slide4">Interested?</a>
+    </nav>
+  </header>
+
+  <main>
+      <section class="slide" id="intro">
+      <h2 style="font-size: 3rem; font-weight: 600; margin-bottom: 1.5rem;">
+          <img src="logo.png" alt="🌍  " style="height: 2.5rem; vertical-align: middle; margin-right: 0.5rem;">
+          Welcome to Freva
+      </h2>
+      <p>Freva – The Free Evaluation System Framework – <br> is a gateway to <em>reproducible</em>, easy-to-use, and shareable data analysis.<br>It allows your users to:</p>
+      <ul style="font-size: 1.3rem; max-width: 800px; text-align: left; list-style: none; padding-left: 0; line-height: 1.6;">
+        <li>📊 <strong>Explore</strong> millions of datasets efficiently</li>
+        <li>🧪 <strong>Define</strong> and share reproducible scientific workflows</li>
+        <li>🌐 <strong>Access</strong> data from anywhere via zarr streaming</li>
+        <li>🤝 <strong>Collaborate</strong> and gain visibility within your community</li>
+        <li>🛠️ <strong>Integrate</strong> your own tools via our REST API for full flexibility</li>
+      </ul>
+      <div class="nav-buttons" style="position: static; margin-top: 2rem;">
+        <a href="#slide0">Start Exploring</a>
+      </div>
+    </section>
+
+      <section class="slide" id="slide0">
+      <h2>⚡ Search Vast Amounts of Data - Fast and Intuitive</h2>
+      <p>🔍 Quickly explore millions of datasets using Freva’s intuitive web
+      interface, powerful command line tools, or flexible Python library.</p>
+      <img src="gifs/search-datasets.gif" alt="Dataset Search" />
+      <div class="nav-buttons">
+        <a href="#slide1">More</a>
+      </div>
+    </section>
+
+    <section class="slide" id="slide1">
+      <h2>🔄 Make your Scientific Workflows Reproducible and Visible </h2>
+      <p>🧪 Define your own workflows that automatically generate user interfaces
+      for the web, CLI, and Python — making them easy to apply,
+      fully reproducible, and effortlessly shareable across your community.</p>
+      <img src="gifs/scientific-workflows.gif" alt="Scientific Workflows" />
+      <div class="nav-buttons">
+        <a href="#slide2">More</a>
+      </div>
+    </section>
+
+    <section class="slide" id="slide2">
+      <h2>🌐 Securely Access Data from Anywhere</h2>
+      <p>📡 Access your data from anywhere across data centres using Zarr streaming technology.</p>
+      <img src="gifs/zarr-streaming.gif" alt="Zarr Streaming" />
+      <div class="nav-buttons">
+        <a href="#slide3">More</a>
+      </div>
+    </section>
+
+    <section class="slide" id="slide3">
+      <h2>🤖 Coming Soon: Interact with a Climate AI</h2>
+      <p>💬 Analyse, Inspect and even Generate climate datasets through natural conversation with AI.</p>
+      <img src="gifs/climate-chatbot.gif" alt="Climate ChatBot" />
+      <div class="nav-buttons">
+        <a href="#slide4">More</a>
+      </div>
+    </section>
+
+    <section class="slide" id="slide4">
+      <h2>📬 Interested?</h2>
+      <div class="link-cards">
+        <a class="link-card" href="https://freva-deployment.readthedocs.io">📘 Admin Guide</a>
+        <a class="link-card" href="https://freva-clint.github.io/freva-nextgen/">📚 Client Library</a>
+        <a class="link-card" href="https://www.freva.dkrz.de">🌍 Freva Web UI</a>
+        <a class="link-card" href="mailto:freva@dkrz.de">✉️ Contact Us</a>
+      </div>
+      <div class="nav-buttons">
+        <a href="#slide0">Back to Top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Freva Project. All rights reserved.</p>
+  </footer>
+    <script>
+  document.querySelectorAll('.nav-buttons a').forEach(button => {
+    button.addEventListener('click', () => {
+      const currentSection = button.closest('.slide');
+      if (!currentSection) return;
+      const nextSection = currentSection.nextElementSibling;
+      if (!nextSection) return;
+      const gifs = nextSection.querySelectorAll('img');
+      gifs.forEach(img => {
+        if (img.src.includes('.gif')) {
+          const src = img.src;
+          img.src = '';
+          img.src = src;
+        }
+      });
+    });
+  });
+  // Also handle reload on scroll via keyboard
+  document.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      const sections = Array.from(document.querySelectorAll('.slide'));
+      const scrollY = window.scrollY + window.innerHeight / 2;
+      const current = sections.findIndex(sec => sec.offsetTop > scrollY);
+      const target = (e.key === 'ArrowUp') ? Math.max(0, current - 2) : Math.min(sections.length - 1, current);
+      const nextSection = sections[target];
+      const gifs = nextSection.querySelectorAll('img');
+      gifs.forEach(img => {
+        if (img.src.includes('.gif')) {
+          const src = img.src;
+          img.src = '';
+          img.src = src;
+        }
+      });
+    }
+  });
+</script>
+
+  <script>
+    const sections = Array.from(document.querySelectorAll('.slide'));
+
+    function scrollToSlide(direction) {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const currentIndex = sections.findIndex(s => scrollPosition < s.offsetTop + s.offsetHeight);
+      const nextIndex = Math.min(Math.max(currentIndex + direction, 0), sections.length - 1);
+      sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space' || event.code === 'ArrowDown') {
+        event.preventDefault();
+        scrollToSlide(1);
+      } else if (event.code === 'ArrowUp') {
+        event.preventDefault();
+        scrollToSlide(-1);
+      }
+    });
+  </script>
+</body>
+</html>
